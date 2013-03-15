@@ -16,3 +16,12 @@ tmp
 .yardoc
 _yardoc
 doc/
+
+# Bundler
+bin
+
+# Chef
+cookbooks
+
+# Vagrant
+.vagrant
