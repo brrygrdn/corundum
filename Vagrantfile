@@ -22,6 +22,7 @@ Vagrant::Config.run do |config|
     chef.add_recipe 'build-essential'
 
     chef.add_recipe 'rvm::vagrant'
+    chef.add_recipe 'rvm::system'
     chef.add_recipe 'rvm::user'
 
     chef.json = {
