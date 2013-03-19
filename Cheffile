@@ -13,4 +13,6 @@ cookbook 'rvm',
 cookbook 'mysql'
 cookbook 'postgresql'
 
+cookbook 'imagemagick'
+
 

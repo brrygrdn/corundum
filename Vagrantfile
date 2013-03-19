@@ -30,7 +30,10 @@ Vagrant::Config.run do |config|
     chef.add_recipe 'rvm::user'
 
     chef.add_recipe 'mysql::server'
-    chef.add_recipe "postgresql::server"
+    chef.add_recipe 'postgresql::server'
+
+    chef.add_recipe 'imagemagick'
+    chef.add_recipe 'imagemagick::devel'
 
     chef.json = {
       rvm: {
