@@ -1,0 +1,11 @@
+Vagrant::Config.run do |config|
+
+  # Set the host_name in the project Vagrantfile to be the name of the project
+  config.vm.host_name = "corundum"
+
+  config.vm.forward_port 3000, 3000
+  config.vm.forward_port 3306, 3307   # mysql
+  config.vm.forward_port 5432, 5433   # postgresql
+
+  config.vm.share_folder "code", "/home/vagrant/code", ".", :create => true
+end
