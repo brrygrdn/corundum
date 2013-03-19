@@ -10,4 +10,7 @@ cookbook 'build-essential'
 cookbook 'rvm',
   :git => 'https://github.com/fnichol/chef-rvm'
 
+cookbook 'mysql'
+cookbook 'postgresql'
+
 

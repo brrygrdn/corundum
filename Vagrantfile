@@ -10,7 +10,11 @@ Vagrant::Config.run do |config|
   config.vm.box = "precise64"
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
+  config.vm.host_name = "corundum"
+
   config.vm.forward_port 3000, 3000
+  config.vm.forward_port 3306, 3307   # mysql
+  config.vm.forward_port 5432, 5432   # postgresql
 
   config.vm.share_folder "code", "/home/vagrant/code", ".", :create => true
 
@@ -25,8 +29,10 @@ Vagrant::Config.run do |config|
     chef.add_recipe 'rvm::system'
     chef.add_recipe 'rvm::user'
 
-    chef.json = {
+    chef.add_recipe 'mysql::server'
+    chef.add_recipe "postgresql::server"
 
+    chef.json = {
       rvm: {
         user_installs: [
           {
@@ -46,6 +52,20 @@ Vagrant::Config.run do |config|
         ],
         vagrant: {
           system_chef_solo: '/opt/vagrant_ruby/bin/chef-solo'
+        }
+      },
+
+      :mysql => {
+        :server_root_password   => 'password',
+        :server_repl_password   => 'password',
+        :server_debian_password => 'password',
+        :allow_remote_root      => true          # access mysql root from remote (for development only)
+      },
+
+      :postgresql => {
+        :listen_addresses => '*',
+        :password => {
+          :postgres => 'password'
         }
       }
 
