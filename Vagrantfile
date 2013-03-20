@@ -12,7 +12,7 @@ Vagrant::Config.run do |config|
 
   config.vm.host_name = "corundum"
 
-  config.vm.forward_port 3000, 3000
+  config.vm.forward_port 3000, 3030   # rails
   config.vm.forward_port 3306, 3307   # mysql
   config.vm.forward_port 5432, 5432   # postgresql
 
