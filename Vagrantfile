@@ -14,7 +14,7 @@ Vagrant::Config.run do |config|
 
   config.vm.forward_port 3000, 3030   # rails
   config.vm.forward_port 3306, 3307   # mysql
-  config.vm.forward_port 5432, 5432   # postgresql
+  config.vm.forward_port 5432, 5433   # postgresql
 
   config.vm.share_folder "code", "/home/vagrant/code", ".", :create => true
 
