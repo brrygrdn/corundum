@@ -77,7 +77,7 @@ in order to prepare corundum for use on your system:
 ### A note on Vagrantfile.pkg
 
 This file contains some default ports and symlinks that are duplicated in the main Vagrantfile.
-Feel free to omit this if you would rather set these directly in your project's Vagrantfile.-/**
+Feel free to omit this if you would rather set these directly in your project's Vagrantfile.
 
 ## Using Corundum in a project
 
@@ -114,11 +114,17 @@ To use corundum as a base-box for your project:
   vagrant up
   ```
 
+Make sure to add /.vagrant to your .gitignore so you don't checkin its cache file.
+
 ### Accessing the VM
 
 Once provisioning is complete, access your VM by running ```vagrant ssh```
 
 You can shut down the image with ```vagrant halt```
+
+If you've made a mistake or are finished using the VM, run ```vagrant destroy``` to remove it.
+
+You can open the VirtualBox Manager to see which
 
 ### Where's my stuff?
 
