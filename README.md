@@ -81,7 +81,81 @@ Feel free to omit this if you would rather set these directly in your project's 
 
 ## Using Corundum in a project
 
-TODO
+To use corundum as a base-box for your project:
+
+1. Add it to your available boxes in Vagrant
+
+  ```
+  vagrant box add corundum /path/to/corundum.box
+  ```
+
+  You can check which boxes you have installed with
+
+  ```
+  vagrant box list
+  ```
+
+2. Initialise Vagrant for your project
+
+  ```
+  cd my_project
+  vagrant init
+  ```
+
+3. Edit the generated Vagrantfile to include the line
+
+  ```
+  config.vm.box = "corundum"
+  ```
+
+4. Provision your project's VM
+
+  ```
+  vagrant up
+  ```
+
+### Accessing the VM
+
+Once provisioning is complete, access your VM by running ```vagrant ssh```
+
+You can shut down the image with ```vagrant halt```
+
+### Where's my stuff?
+
+Your working directory will be available inside your VM at ```~/code```
+
+Rails, MySQL and other services are available on your host machine through a series of port-forwards.
+You can see the default forwards in Vagrantfile.pkg.
+
+As an example:
+
+1. SSH into your VM
+
+```
+vagrant ssh
+```
+
+2. Start a rails server
+
+```
+cd code
+rails server
+```
+
+3. Point your browser at localhost:3030 to see your app.
+
+### Customising
+
+You can override many of the default settings of a new corundum-based box in your own project's Vagrantfile.
+See examples/Vagrantfile for some hints.
+
+Corundum only provides the basics for a Ruby / Rails project, you may need to provision some other depenancies yourself.
+These can be added to your own Vagrantfile using chef / puppet or shell provisioning.
+
+See the [Vagrant docs](http://docs-v1.vagrantup.com/v1/docs/provisioners.html) for more information.
+
+If you are using Chef, I recomemend using [Librarian](https://github.com/applicationsonline/librarian)
+to manage your cookbooks so you don't need to check them into your project or use git submodules.
 
 ## Contributing
 
