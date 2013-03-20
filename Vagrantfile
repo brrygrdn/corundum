@@ -29,6 +29,9 @@ Vagrant::Config.run do |config|
     chef.add_recipe 'rvm::system'
     chef.add_recipe 'rvm::user'
 
+    chef.add_recipe 'nodejs'
+    chef.add_recipe 'nodejs::npm'
+
     chef.add_recipe 'mysql::server'
     chef.add_recipe 'postgresql::server'
 

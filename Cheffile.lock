@@ -20,11 +20,21 @@ GIT
     rvm (0.9.1)
       chef_gem (>= 0.0.0)
 
+GIT
+  remote: https://github.com/mdxp/nodejs-cookbook
+  ref: master
+  sha: 164383284398f6905dd9d5acd648c6daeec25cb9
+  specs:
+    nodejs (1.1.1)
+      apt (>= 0.0.0)
+      build-essential (>= 0.0.0)
+
 DEPENDENCIES
   apt (>= 0)
   build-essential (>= 0)
   imagemagick (>= 0)
   mysql (>= 0)
+  nodejs (>= 0)
   postgresql (>= 0)
   rvm (>= 0)
 

@@ -1,2 +1,1 @@
-#!/usr/bin/env bash
-rvm use 'ruby-1.9.3@corundum'
+rvm use --create 'ruby-1.9.3@corundum'
