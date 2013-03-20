@@ -137,16 +137,16 @@ As an example:
 
 1. SSH into your VM
 
-```
-vagrant ssh
-```
+  ```
+  vagrant ssh
+  ```
 
 2. Start a rails server
 
-```
-cd code
-rails server
-```
+  ```
+  cd code
+  rails server
+  ```
 
 3. Point your browser at localhost:3030 to see your app.
 
