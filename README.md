@@ -20,8 +20,8 @@ The box is based on the precise64.box / Ubuntu 12.04 provided by Vagrant
 
 ## Getting Started
 
-Assuming you've already installed [Vagrant](http://downloads.vagrantup.com) 
-and [VirtualBox](https://www.virtualbox.org/wiki/Downloads), 
+Assuming you've already installed [Vagrant](http://downloads.vagrantup.com)
+and [VirtualBox](https://www.virtualbox.org/wiki/Downloads),
 in order to prepare corundum for use on your system:
 
 1. Clone the repo
@@ -35,13 +35,13 @@ in order to prepare corundum for use on your system:
   ```
   bundle install
   ```
-  
+
 3. Fetch cookbooks
 
   ```
   librarian-chef install
   ```
-    
+
 4. Provision the VM
 
   ```
@@ -56,28 +56,28 @@ in order to prepare corundum for use on your system:
 
   This will create package.box in your working directory. This file can be distributed to your team directly
   so they can skip steps 1-5.
-  
+
 6. Add the packaged VM to Vagrant for future use
 
   ```
   vagrant box add corundum package.box
   ```
-    
+
 7. Cleanup
 
   Before provisioning a corundum-based VM in one of your projects, make sure you tear down the VM used
   to create the packaged version by going to your working directory for this repo and running:
-  
+
   ```
-  vagrant destroy
+  vagrant halt
   ```
-    
+
   This ensures forwarded ports are free for new VMs.
 
 ### A note on Vagrantfile.pkg
 
-This file contains some default ports and symlinks that are duplicated in the main Vagrantfile. 
-Feel free to omit this if you would rather set these directly in your project's Vagrantfile.
+This file contains some default ports and symlinks that are duplicated in the main Vagrantfile.
+Feel free to omit this if you would rather set these directly in your project's Vagrantfile.-/**
 
 ## Using Corundum in a project
 
