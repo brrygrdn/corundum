@@ -26,37 +26,51 @@ in order to prepare corundum for use on your system:
 
 1. Clone the repo
 
-    git clone git://github.com/brrygrdn/corundum.git
+  ```
+  git clone git://github.com/brrygrdn/corundum.git
+  ```
 
 2. Install gems
 
-    bundle install
-    
+  ```
+  bundle install
+  ```
+  
 3. Fetch cookbooks
 
-    librarian-chef install
+  ```
+  librarian-chef install
+  ```
     
 4. Provision the VM
 
-    vagrant up
+  ```
+  vagrant up
+  ```
 
 5. Package the VM as a box
 
-    vagrant package --vagrantfile Vagrantfile.pkg
+  ```
+  vagrant package --vagrantfile Vagrantfile.pkg
+  ```
 
   This will create package.box in your working directory. This file can be distributed to your team directly
   so they can skip steps 1-5.
   
 6. Add the packaged VM to Vagrant for future use
 
-    vagrant box add corundum package.box
+  ```
+  vagrant box add corundum package.box
+  ```
     
 7. Cleanup
 
   Before provisioning a corundum-based VM in one of your projects, make sure you tear down the VM used
   to create the packaged version by going to your working directory for this repo and running:
-   
-    vagrant destroy
+  
+  ```
+  vagrant destroy
+  ```
     
   This ensures forwarded ports are free for new VMs.
 
