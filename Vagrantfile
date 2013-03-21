@@ -39,6 +39,7 @@ Vagrant::Config.run do |config|
       rvm: {
         user_installs: [
           {
+            version:      '1.18.21',
             user:         'vagrant',
             rubies:       ['1.9.3', '2.0.0'],
             default_ruby: '1.9.3',
@@ -58,17 +59,23 @@ Vagrant::Config.run do |config|
         }
       },
 
-      :mysql => {
-        :server_root_password   => 'password',
-        :server_repl_password   => 'password',
-        :server_debian_password => 'password',
-        :allow_remote_root      => true          # access mysql root from remote (for development only)
+      nodejs: {
+        version: '0.10.0'
       },
 
-      :postgresql => {
-        :listen_addresses => '*',
-        :password => {
-          :postgres => 'password'
+      mysql: {
+        version:                '5.5.29',
+        server_root_password:   'password',
+        server_repl_password:   'password',
+        server_debian_password: 'password',
+        allow_remote_root:      true          # access mysql root from remote (for development only)
+      },
+
+      postgresql: {
+        version:          '9.1',
+        listen_addresses: '*',
+        password: {
+          postgres: 'password'
         }
       }
 
