@@ -9,14 +9,14 @@ It aims to provide only the absolute bare essentials to get someone working on a
 The box is based on the precise64.box / Ubuntu 12.04 provided by Vagrant
 
 - Rubies
-  - rvm
+  - rvm v1.18.21
   - ruby v1.9.3
   - ruby v2.0.0
 - Databases
-  - MySQL
-  - PostgreSQL
+  - MySQL v5.5.29
+  - PostgreSQL v9.1 ( Currently untested )
 - Javascript Runtime
-  - Node
+  - Node.js v0.10.0
 
 ## Getting Started
 
