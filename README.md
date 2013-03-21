@@ -124,7 +124,7 @@ You can shut down the image with ```vagrant halt```
 
 If you've made a mistake or are finished using the VM, run ```vagrant destroy``` to remove it.
 
-You can open the VirtualBox Manager to see which
+You can open the VirtualBox Manager to see any VMs installed by Vagrant if in doubt.
 
 ### Where's my stuff?
 
