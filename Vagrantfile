@@ -80,6 +80,9 @@ Vagrant::Config.run do |config|
       }
 
     }
+
+    # Still don't know why ubuntu doesn't come with VIM
+    config.vm.provision :shell, :inline => 'apt-get install vim'
   end
 
 end
