@@ -3,7 +3,7 @@
 
 Vagrant::Config.run do |config|
   config.vm.box = "corundum"
-  # The url from which the 'config.vm.box' box will be fetched if it
+  # The url from which the box will be fetched if it
   # doesn't already exist on the user's system.
   #
   # TODO: Point to distributed corundum image
