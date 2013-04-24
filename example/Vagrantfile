@@ -3,23 +3,22 @@
 
 Vagrant::Config.run do |config|
   config.vm.box = "corundum"
-  # The url from where the 'config.vm.box' box will be fetched if it
+  # The url from which the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
   #
   # TODO: Point to distributed corundum image
-  # config.vm.box_url = "http://domain.com/path/to/corundum.box"
+  config.vm.box_url = "http://domain.com/path/to/corundum.box"
 
   # Change the hostname of project VM
   config.vm.host_name = "mydev"
 
-  # Overrule port forwarding of guest:3000 to host:3000 for this VM
-  # In this case, host:3333 used instead
+  # Overrule port forwarding of guest:3000 to host:3000
   config.vm.forward_port 3000, 3333
 
-  # Boot with a GUI so you can see the screen. (Default is headless)
+  # Boot the VM in a VirtualBox window. (Default is headless)
   #
   # Useful if using Vagrant on Windows so you can log into the VM directly
-  # Username and Password are both 'vagrant'
   #
-  # config.vm.boot_mode = :gui
+  # Username and Password are both 'vagrant'
+  config.vm.boot_mode = :gui
 end
