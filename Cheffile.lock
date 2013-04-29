@@ -4,7 +4,6 @@ SITE
     apt (1.9.0)
     build-essential (1.3.4)
     chef_gem (0.0.5)
-    imagemagick (0.2.2)
     mysql (2.1.2)
       build-essential (>= 0.0.0)
       openssl (>= 0.0.0)
@@ -32,7 +31,6 @@ GIT
 DEPENDENCIES
   apt (>= 0)
   build-essential (>= 0)
-  imagemagick (>= 0)
   mysql (>= 0)
   nodejs (>= 0)
   postgresql (>= 0)
