@@ -128,7 +128,7 @@ You can open the VirtualBox Manager to see any VMs installed by Vagrant if in do
 
 ### Where's my stuff?
 
-Your working directory will be available inside your VM at ```~/code```
+Your working directory will be available inside your VM at ```~/my_project```
 
 Rails, MySQL and other services are available on your host machine through a series of port-forwards.
 You can see the default forwards in Vagrantfile.pkg.
@@ -144,7 +144,7 @@ As an example:
 2. Start a rails server
 
   ```
-  cd code
+  cd my_project
   rails server
   ```
 

@@ -16,7 +16,7 @@ Vagrant::Config.run do |config|
   config.vm.forward_port 3306, 3307   # mysql
   config.vm.forward_port 5432, 5433   # postgresql
 
-  config.vm.share_folder "code", "/home/vagrant/code", ".", :create => true
+  config.vm.share_folder "code", "#{File.basename(Dir.pwd)}", "."
 
   config.vm.provision :chef_solo do |chef|
     # This path will be expanded relative to the project directory
