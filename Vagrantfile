@@ -38,11 +38,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       }
     }
 
-    config.vm.provision :shell, :inline => 'apt-get --yes install vim'
-    config.vm.provision :shell, :inline => 'apt-get --yes install curl'
+    config.vm.provision :shell, inline: 'apt-get --yes install vim'
+    config.vm.provision :shell, inline: 'apt-get --yes install curl'
 
-    config.vm.provision :shell, :path => "scripts/install-rvm.sh",  :args => "stable"
-    config.vm.provision :shell, :path => "scripts/install-ruby.sh", :args => "2.1.1"
+    config.vm.provision :shell, path: 'scripts/install-rvm.sh',  args: 'stable', privileged: false
+    config.vm.provision :shell, path: 'scripts/install-ruby.sh', args: '2.1.1', privileged: false
   end
 
 end
