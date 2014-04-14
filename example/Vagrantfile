@@ -2,15 +2,10 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "corundum"
-  # The url from which the box will be fetched if it
-  # doesn't already exist on the user's system.
-  #
-  # TODO: Point to distributed corundum image
-  config.vm.box_url = "http://domain.com/path/to/corundum.box"
+  config.vm.box = "brrygrdn/corundum"
 
   # Change the hostname of project VM
-  config.vm.host_name = "mydev"
+  config.vm.host_name = "my-dev"
 
   # Overrule port forwarding of guest:3000 to host:3000
   config.vm.network "forwarded_port", guest: 3000, host: 3000
