@@ -1,22 +1,20 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-Vagrant::Config.run do |config|
-  # TODO: Reconsider base box
-  #
-  # Current precise64 has VirtualBox guest additions v4.2.0, current VirtualBox v4.2.8
-  # Warns on machine up, but does not disrupt port forwarding or shared folders
-  #
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "precise64"
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
   config.vm.host_name = "corundum"
 
-  config.vm.forward_port 3000, 3030   # rails
-  config.vm.forward_port 3306, 3307   # mysql
-  config.vm.forward_port 5432, 5433   # postgresql
+  config.vm.network "forwarded_port", guest: 3000, host: 3030 # rails
+  config.vm.network "forwarded_port", guest: 3306, host: 3307 # mysql
+  config.vm.network "forwarded_port", guest: 5432, host: 5433 # postgresql
 
-  config.vm.share_folder "code", "#{File.basename(Dir.pwd)}", "."
+  config.vm.synced_folder ".", "/home/vagrant/code"
 
   config.vm.provision :chef_solo do |chef|
     # This path will be expanded relative to the project directory
@@ -81,7 +79,6 @@ Vagrant::Config.run do |config|
 
     }
 
-    # Still don't know why ubuntu doesn't come with VIM
     config.vm.provision :shell, :inline => 'apt-get --yes install vim'
   end
 
