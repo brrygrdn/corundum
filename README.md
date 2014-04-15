@@ -17,6 +17,8 @@ by Vagrant (see: https://vagrantcloud.com/hashicorp)
 
 Installs:
 - Latest RVM
+- git
+- oh-my-zsh
 - Ruby v2.1.1
 - MySQL v5.5.29
  - Password is defaulted to 'vagrant' for root user
@@ -66,7 +68,7 @@ in order to prepare corundum for use on your system:
 6. Add the packaged VM to Vagrant for future use
 
   ```
-  vagrant box add brrygrdn/corundum package.box
+  vagrant box add package.box --name brrygrdn/corundum
   ```
 
 7. Cleanup
@@ -88,7 +90,7 @@ To use corundum as a base-box for your project:
 1. Add it to your available boxes in Vagrant
 
   ```
-  vagrant box add corundum /path/to/corundum.box
+  vagrant box add brrygrdn/corundum
   ```
 
   You can check which boxes you have installed with
@@ -107,7 +109,7 @@ To use corundum as a base-box for your project:
 3. Edit the generated Vagrantfile to include the line
 
   ```
-  config.vm.box = "corundum"
+  config.vm.box = "brrygrdn/corundum"
   ```
 
 4. Provision your project's VM

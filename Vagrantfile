@@ -12,14 +12,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 3000, host: 3030 # rails
   config.vm.network "forwarded_port", guest: 3306, host: 3307 # mysql
 
-  config.vm.synced_folder ".", "/home/vagrant/#{File.basename(Dir.pwd)}"
-
   config.vm.provision :chef_solo do |chef|
     # This path will be expanded relative to the project directory
     chef.cookbooks_path = "cookbooks"
 
     chef.add_recipe 'apt'
     chef.add_recipe 'build-essential'
+
+    chef.add_recipe 'git'
+    chef.add_recipe 'zsh'
 
     chef.add_recipe 'mysql::server'
 
@@ -41,6 +42,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.provision :shell, inline: 'apt-get --yes install vim'
     config.vm.provision :shell, inline: 'apt-get --yes install curl'
 
+    config.vm.provision :shell, path: 'scripts/install-oh-my-zsh.sh', privileged: false
     config.vm.provision :shell, path: 'scripts/install-rvm.sh',  args: 'stable', privileged: false
     config.vm.provision :shell, path: 'scripts/install-ruby.sh', args: '2.1.1', privileged: false
   end
