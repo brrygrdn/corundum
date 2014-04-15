@@ -19,6 +19,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe 'apt'
     chef.add_recipe 'build-essential'
 
+    chef.add_recipe 'git'
+    chef.add_recipe 'zsh'
+
     chef.add_recipe 'mysql::server'
 
     chef.json = {
@@ -39,6 +42,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.provision :shell, inline: 'apt-get --yes install vim'
     config.vm.provision :shell, inline: 'apt-get --yes install curl'
 
+    config.vm.provision :shell, path: 'scripts/install-oh-my-zsh.sh', privileged: false
     config.vm.provision :shell, path: 'scripts/install-rvm.sh',  args: 'stable', privileged: false
     config.vm.provision :shell, path: 'scripts/install-ruby.sh', args: '2.1.1', privileged: false
   end

@@ -17,6 +17,8 @@ by Vagrant (see: https://vagrantcloud.com/hashicorp)
 
 Installs:
 - Latest RVM
+- git
+- oh-my-zsh
 - Ruby v2.1.1
 - MySQL v5.5.29
  - Password is defaulted to 'vagrant' for root user
